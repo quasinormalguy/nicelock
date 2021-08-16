@@ -1,0 +1,31 @@
+#+TITLE:     nicelock
+#+AUTHOR:    quasinormalguy
+
+** A patched slock config
+
+[[file:slock_ss.jpg]]
+
+*** Pathes applied are:
+
+- [[https://tools.suckless.org/slock/patches/colormessage][colormessage]]
+
+- [[https://tools.suckless.org/slock/patches/dpms][dpms]]
+
+- [[https://tools.suckless.org/slock/patches/foreground-and-background][foreground and background]]
+
+- [[https://tools.suckless.org/slock/patches/mediakeys][mediakeys]]
+
+- [[https://tools.suckless.org/slock/patches/quickcancel][quickcancel]]
+
+- TODO: [[https://tools.suckless.org/slock/patches/capscolor][capscolor]] patch is causing seg fault, find a workaround
+
+*** How-to's
+
+- Run ~sudo make clean install~.
+
+- Simply run using ~slock~.
+
+- For something fancy may try ~slock -m "$(cowsay "$(fortune)" | lolcat -ft)"~.
+
+\\
+*Cheers!*
