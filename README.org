@@ -29,7 +29,7 @@
 
 *NOTE1:* This configuration of slock will not work if there is already a power management system running (such as xfce4-power-manager). The workaround would be to remove the [[https://tools.suckless.org/slock/patches/dpms][dpms patch]] which should not be difficult.
 
-*Note2:* The suckless website suggests using [[https://linux.die.net/man/1/xautolock][xautolock]] for auto-locking. But I would suggest using [[https://github.com/jD91mZM2/xidlehook][xidlehook]] which is a better implementation as it has more options such as not to lock the screen when a full screen application is running or an audio is playing.
+*NOTE2:* The suckless website suggests using [[https://linux.die.net/man/1/xautolock][xautolock]] for auto-locking. But I would suggest using [[https://github.com/jD91mZM2/xidlehook][xidlehook]] which is a better implementation as it has more options such as not to lock the screen when a full screen application is running or an audio is playing.
 
 #+BEGIN_SRC shell :results silent :exports code
   #!/usr/bin/env zsh
@@ -43,11 +43,11 @@
     --not-when-fullscreen \
     `# Don't lock when there's audio playing` \
     --not-when-audio \
-    `# Dim the screen after 60 seconds, undim if user becomes active` \
+    `# Dim the screen after 90 seconds, undim if user becomes active` \
     --timer 90 \
       'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
       'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-  ` # Undim & lock after 10 more seconds` \
+  ` # Undim & lock after 30 more seconds` \
     --timer 30 \
       'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; /usr/local/bin/slock' \
        '' 
